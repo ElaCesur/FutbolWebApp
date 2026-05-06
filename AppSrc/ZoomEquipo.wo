@@ -1,5 +1,5 @@
-﻿// C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomEntrenador.wo
-// ZoomEntrenador
+﻿// C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomEquipo.wo
+// ZoomEquipo
 //
 
 Use cWebView.pkg
@@ -10,11 +10,10 @@ Use cWebForm.pkg
 
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
-Use centrenadorDataDictionary.dd
 
-Object oZoomEntrenador is a cWebView
+Object oZoomEquipo is a cWebView
     Set piColumnCount to 12
-    Set psCaption to "ZoomEntrenador"
+    Set psCaption to "ZoomEquipo"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtZoom
     Set pbShowCaption to False
@@ -28,52 +27,32 @@ Object oZoomEntrenador is a cWebView
         Set DDO_Server To oliga_DD
     End_Object 
 
-    Object oentrenador_DD is a centrenadorDataDictionary
-        Set DDO_Server To oequipo_DD
-    End_Object 
-
-    Set Main_DD To oentrenador_DD
-    Set Server  To oentrenador_DD
+    Set Main_DD To oequipo_DD
+    Set Server  To oequipo_DD
 
 
     Object oWebMainPanel is a cWebPanel
         Set piColumnCount to 12
         WebSetResponsive piColumnCount rmMobile to 4
 
-        Object oentrenadorNombre is a cWebForm
-            Entry_Item entrenador.Nombre
-            Set piColumnSpan to 10
+        Object oequipoNombre is a cWebForm
+            Entry_Item equipo.Nombre
+            Set piColumnSpan to 12
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
             Set psLabel to "Nombre"
         End_Object 
 
-        Object oentrenadorApellido is a cWebForm
-            Entry_Item entrenador.Apellido
-            Set piColumnSpan to 10
-            Set piColumnIndex to 0
-            Set peLabelPosition to lpTop
-            Set psLabel to "Apellido"
-        End_Object 
-
-        Object oentrenadorNacionalidad is a cWebForm
-            Entry_Item entrenador.Nacionalidad
-            Set piColumnSpan to 8
-            Set piColumnIndex to 0
-            Set peLabelPosition to lpTop
-            Set psLabel to "Nacionalidad"
-        End_Object 
-
-        Object oequipoID is a cWebForm
-            Entry_Item equipo.ID
+        Object oligaID is a cWebForm
+            Entry_Item liga.ID
             Set piColumnSpan to 2
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
-            Set psLabel to "EquipoID"
+            Set psLabel to "LigaID"
             Set pbPromptButton to True
 
-// REALIZADO, COMPROBAR SI ESTÁ BIEN ToDo: Fill in the from-child parent Select view object name for navigate forward
-            WebRegisterPath ntNavigateForward oSelectEquipo
+// ToDo: Fill in the from-child parent Select view object name for navigate forward
+//            WebRegisterPath ntNavigateForward oSelectView
 
             Procedure OnPrompt
                 Send NavigatePath
