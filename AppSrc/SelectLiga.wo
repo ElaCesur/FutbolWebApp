@@ -13,7 +13,7 @@ Use ZoomLiga.wo
 Use cligaDataDictionary.dd
 
 Object oSelectLiga is a cWebView
-    Set psCaption to "SelectLiga"
+    Set psCaption to "Lista Liga"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtSelect
     Set piColumnCount to 12
@@ -32,35 +32,35 @@ Object oSelectLiga is a cWebView
         Set psCSSClass to "MobileList"
         Set pbServerOnRowClick to True
         Set pbFillHeight to True
-        Set pbShowHeader to False
+        Set pbShowHeader to True
         Set piSortColumn to 0
 
         Object oligaNombre is a cWebColumn
             Entry_Item liga.Nombre
-            Set psCaption to "liga.Nombre"
-            Set piWidth to 1000
+            Set psCaption to "Nombre"
+            Set piWidth to 500
         End_Object 
 
         Object oligaPais is a cWebColumn
             Entry_Item liga.Pais
-            Set psCaption to "liga.Pais"
-            Set piWidth to 500
+            Set psCaption to "Pais"
+            Set piWidth to 200
         End_Object 
 
         Object oligaEquipos is a cWebColumn
             Entry_Item liga.Equipos
-            Set psCaption to "liga.Equipos"
+            Set psCaption to "Equipos"
             Set piWidth to 100
         End_Object 
 
         Object oligaEquiposMax is a cWebColumn
             Entry_Item liga.EquiposMax
-            Set psCaption to "liga.EquiposMax"
+            Set psCaption to "EquiposMax"
             Set piWidth to 100
         End_Object 
 
         Object oDetailButton is a cWebColumnButton
-            Set psCaption to "btn"
+            // Set psCaption to "btn"
             Set piWidth to 45
             Set pbFixedWidth to True
             Set pbResizable to False
