@@ -72,7 +72,7 @@ Object oZoomEntrenador is a cWebView
             Set psLabel to "EquipoID"
             Set pbPromptButton to True
 
-// REALIZADO, COMPROBAR SI ESTÁ BIEN ToDo: Fill in the from-child parent Select view object name for navigate forward
+            // COMENTARIO TAREA: Navegación FromChild realizada
             WebRegisterPath ntNavigateForward oSelectEquipo
 
             Procedure OnPrompt

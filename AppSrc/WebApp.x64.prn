@@ -1,5 +1,5 @@
 Compiling Program: C:\DataFlex Projects\FutbolWebApp\AppSrc\WebApp.src
-Memory Available: 13497360384
+Memory Available: 13488103424
 1>Use AllWebAppClasses.pkg
 Using pre-compiled package ALLWEBAPPCLASSES.PKG
 Including file: AllWebAppClasses.x64.pkd    (C:\Program Files\DataFlex 25.0\Pkg\AllWebAppClasses.x64.pkd)
@@ -1911,7 +1911,7 @@ Including file: ZoomEntrenador.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Z
 37739>>>            Set psLabel to "EquipoID"
 37740>>>            Set pbPromptButton to True
 37741>>>
-37741>>>// REALIZADO, COMPROBAR SI ESTÁ BIEN ToDo: Fill in the from-child parent Select view object name for navigate forward
+37741>>>            // COMENTARIO TAREA: Navegación FromChild realizada
 37741>>>            WebRegisterPath ntNavigateForward oSelectEquipo
 37747>>>
 37747>>>            Procedure OnPrompt
@@ -2080,7 +2080,7 @@ Including file: ZoomEquipo.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomE
 37881>>>            Set psLabel to "LigaID"
 37882>>>            Set pbPromptButton to True
 37883>>>
-37883>>>// REALIZADO, COMPROBAR SI ESTÁ BIEN ToDo: Fill in the from-child parent Select view object name for navigate forward
+37883>>>            // COMENTARIO TAREA: Navegación FromChild realizada.
 37883>>>            WebRegisterPath ntNavigateForward oSelectLiga
 37889>>>
 37889>>>            Procedure OnPrompt
@@ -2481,7 +2481,7 @@ Including file: cjugadorDataDictionary.dd    (C:\DataFlex Projects\FutbolWebApp\
 38207>>>>>            Set psLabel to "EquipoID"
 38208>>>>>            Set pbPromptButton to True
 38209>>>>>
-38209>>>>>// REALIZADO, COMPROBAR SI ESTÁ BIEN ToDo: Fill in the from-child parent Select view object name for navigate forward
+38209>>>>>            // COMENTARIO TAREA: Navegación FromChild realizada
 38209>>>>>            WebRegisterPath ntNavigateForward oSelectEquipo
 38215>>>>>
 38215>>>>>            Procedure OnPrompt
@@ -3473,7 +3473,7 @@ Including file: SelectPosicion.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\S
 39044>Send StartWebApp of oWebApp
 39045>
 Summary
-Memory Available: 13475004416
+Memory Available: 13473173504
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 25614
