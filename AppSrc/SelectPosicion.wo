@@ -65,9 +65,6 @@ Object oSelectPosicion is a cWebView
 
         End_Object 
 
-// ToDo: Fill in the from-parent child Select view object name for navigate forward
-//        WebRegisterPath ntNavigateForward oSelectView
-
         WebRegisterPath ntNavigateForward oZoomPosicion
 
         Procedure OnRowClick String sRowId
@@ -76,8 +73,7 @@ Object oSelectPosicion is a cWebView
 
             Case Begin
                 Case (NavigateData.eNavigateType = nfFromParent)
-// ToDo: Fill in the from-parent child Select view object name for navigate forward
-Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not yet defined"
+                      Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not yet defined"
 //                    Send NavigateForward of oSelectView Self
                     Case Break
 
@@ -92,10 +88,7 @@ Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not y
                 /* COMENTARIO TAREA: Cuando pulsamos un registro navegamos tambíen hacia delante al ZoomEntrenador
                 lo hacemos en el else, ya que DataFlex no distingue que esta en el main y tiene sentido que al pulsar
                 un registro nos lleve a él */
-                Case Else // must be nfUndefined
-// ToDo: Fill in the from-parent child Select view object name for navigate forward
-// Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not yet defined"
-//                    Send NavigateForward of oSelectView Self
+                Case Else 
                     Send NavigatePath
 
             Case End
