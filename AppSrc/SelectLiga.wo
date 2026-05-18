@@ -104,7 +104,7 @@ Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not y
                     Case Break
 
                 Case (NavigateData.eNavigateType = nfFromMain)
-                    Send NavigatePath
+                    //Send NavigatePath
                     Case Break
 
                 /* COMENTARIO TAREA: Cuando pulsamos un registro navegamos tambíen hacia delante al ZoomEntrenador

@@ -1,14 +1,20 @@
 ﻿// C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomLiga.wo
 // ZoomLiga
 //
-
+Use cWebColumn.pkg
+Use cWebList.pkg
+Use cWebColumn.pkg
+Use SelectEquipo.wo
 Use cWebView.pkg
 Use cWebPanel.pkg
 Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebForm.pkg
+Use cWebButton.pkg
 
 Use cligaDataDictionary.dd
+Use cequipoDataDictionary.dd
+
 
 Object oZoomLiga is a cWebView
     Set piColumnCount to 12
@@ -22,10 +28,14 @@ Object oZoomLiga is a cWebView
     Object oliga_DD is a cligaDataDictionary
     End_Object 
 
-    Set Main_DD To oliga_DD
-    Set Server  To oliga_DD
-
-
+    Object oequipo_DD is a cequipoDataDictionary
+        Set DDO_Server to oliga_DD
+        Set Constrain_File to liga.File_Number
+    End_Object 
+        
+    Set Main_DD to oliga_DD
+    Set Server  to oliga_DD
+      
     Object oWebMainPanel is a cWebPanel
         Set piColumnCount to 12
         WebSetResponsive piColumnCount rmMobile to 4
@@ -45,14 +55,34 @@ Object oZoomLiga is a cWebView
             Set peLabelPosition to lpTop
             Set psLabel to "Pais"
         End_Object 
-
-        Object oligaEquipos is a cWebForm
-            Entry_Item liga.Equipos
+        
+        Object oListEquipos is a cWebList
+            Set Server to oequipo_DD
+            
+            Set piColumnSpan to 12
+            Set psCSSClass to "MobileList"
+            Set pbFillHeight to True
+            Set pbShowHeader to True
+            Set piSortColumn to 0
+                
+            Object oequipoNombre is a cWebColumn
+                Entry_Item equipo.Nombre
+                Set psCaption to "Nombre Equipo"
+                Set piWidth to 1000
+            End_Object 
+            
+        End_Object
+        
+        Object oWebButtonEquipos is a cWebButton
             Set piColumnSpan to 2
-            Set piColumnIndex to 0
-            Set peLabelPosition to lpTop
-            Set psLabel to "Equipos"
-        End_Object 
+            Set psCaption to "Equipos"
+        
+            WebRegisterPath ntNavigateForward oSelectEquipo
+        
+            Procedure OnClick
+                Send NavigatePath
+            End_Procedure
+        End_Object
 
         Object oligaEquiposMax is a cWebForm
             Entry_Item liga.EquiposMax
@@ -61,6 +91,7 @@ Object oZoomLiga is a cWebView
             Set peLabelPosition to lpTop
             Set psLabel to "EquiposMax"
         End_Object 
+        
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup
@@ -143,6 +174,7 @@ Object oZoomLiga is a cWebView
     End_Procedure
 
     Procedure OnNavigateForward tWebNavigateData NavigateData Integer hoInvokingView Integer hoInvokingObject
+        
         Case Begin
             Case (NavigateData.eNavigateType = nfFromMain)
                 // If from main, this is a propbably a main file Select to Zoom.
@@ -150,6 +182,7 @@ Object oZoomLiga is a cWebView
 
             Case (NavigateData.eNavigateType = nfFromParent)
                 // If from parent, this is a constrained drill down.
+
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromChild)
@@ -159,9 +192,9 @@ Object oZoomLiga is a cWebView
             Case Else // must be nfUndefined
 
         Case End
-
+       
         Send SetActionButtons
 
     End_Procedure
-
+    
 End_Object 

@@ -9,7 +9,7 @@ Object oApplication is a cApplication
 End_Object
 
 Object oWebApp is a cWebApp
-    Set psTheme to "Df_Material"
+    Set psTheme to "PruebaStyle"
     Set peAlignView to alignCenter
     
     // It is important to set this so that all views will default
@@ -107,6 +107,7 @@ Object oWebApp is a cWebApp
                                 Send NavigatePath
                         End_Procedure
                     End_Object
+                
                 End_Object
 
                 Object oSignOut_itm is a cWebMenuItem
