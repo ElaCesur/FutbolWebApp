@@ -88,7 +88,7 @@ Object oZoomEntrenador is a cWebView
             Set psCaption to "Despedir"
         
             Procedure OnClick
-                Send Request_ClearBindingTable of oequipoID
+                Send Clear of oequipo_DD
             End_Procedure
         End_Object
     End_Object 
