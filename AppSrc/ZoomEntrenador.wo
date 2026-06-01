@@ -11,6 +11,9 @@ Use cWebForm.pkg
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
 Use centrenadorDataDictionary.dd
+Use cWebButton.pkg
+Use cWebGrid.pkg
+Use cWebColumn.pkg
 
 Object oZoomEntrenador is a cWebView
     Set piColumnCount to 12
@@ -42,7 +45,7 @@ Object oZoomEntrenador is a cWebView
 
         Object oentrenadorNombre is a cWebForm
             Entry_Item entrenador.Nombre
-            Set piColumnSpan to 10
+            Set piColumnSpan to 6
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
             Set psLabel to "Nombre"
@@ -50,8 +53,8 @@ Object oZoomEntrenador is a cWebView
 
         Object oentrenadorApellido is a cWebForm
             Entry_Item entrenador.Apellido
-            Set piColumnSpan to 10
-            Set piColumnIndex to 0
+            Set piColumnSpan to 6
+            Set piColumnIndex to 6
             Set peLabelPosition to lpTop
             Set psLabel to "Apellido"
         End_Object 
@@ -79,6 +82,15 @@ Object oZoomEntrenador is a cWebView
                 Send NavigatePath
             End_Procedure
         End_Object 
+
+        Object obuttonDespedir is a cWebButton
+            Set piColumnSpan to 2
+            Set psCaption to "Despedir"
+        
+            Procedure OnClick
+                Send Request_ClearBindingTable of oequipoID
+            End_Procedure
+        End_Object
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup
