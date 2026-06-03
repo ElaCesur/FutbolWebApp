@@ -1,0 +1,4 @@
+#REPLACE FILE7 posicion_jugador
+#REPLACE posicion_jugador.File_Number |CI7
+#REPLACE posicion_jugador.id_jugador |FN7,1
+#REPLACE posicion_jugador.id_posicion |FN7,2
